@@ -1,5 +1,5 @@
 "------------------------------------------------------------------------------
-" Features {{{1
+" Features
 "------------------------------------------------------------------------------
 set nocompatible            " Disable vi compatibility
 
@@ -24,14 +24,11 @@ set hidden
 set wildmenu
 set showcmd
 set showmode " console settings
-set hlsearch
-set ignorecase
-set smartcase
-set nostartofline
 set confirm
 set visualbell
 set list
 set listchars=tab:>-
+set title
 
 "------------------------------------------------------------------------------
 " General settings
@@ -43,19 +40,29 @@ set listchars=tab:>-
 set background=dark
 colorscheme gruvbox
 
+" Indent settings
 set expandtab
 set tabstop=4 " tab settings
 set softtabstop=4
 set shiftwidth=4
+set shiftround
 set autoindent
 set cindent
 
+" Search settings
+set hlsearch
+set ignorecase
+set smartcase
+set nostartofline
+
+" General
 set showmatch
 
 set number relativenumber " Numbering
 set ruler
 
 set wrap " wrap long lines to next row
+set linebreak " don't break words
 
 set ttyfast " fast scrolling
 
@@ -85,6 +92,7 @@ let g:syntastic_mode_map = {'mode': 'active',
 
 
 "------------------------------------------------------------------------------
+" Trailing Whitespaces
 "------------------------------------------------------------------------------
 " Trailing whitespace and tabs are forbidden, so highlight them.
 highlight ForbiddenWhitespace ctermbg=red guibg=red
@@ -110,5 +118,5 @@ autocmd InsertEnter * match ForbiddenWhitespace /\t\|\s\+\%#\@<!$/
 " Because I'm lazy, ill be putting a note here of some of the plugin shortcuts
 " - ctrlP = Control+P (duh), control V or s will do a vertical split
 " - nerdtree = F1, s for vert split, ctrl ww for switching pane
-" - ctrl-t disables syntastic 
+" - ctrl-t disables syntastic
 "
