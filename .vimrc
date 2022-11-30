@@ -108,7 +108,25 @@ let g:syntastic_mode_map = {'mode': 'active',
                             \ 'passive_filetypes': ['assembly'] }
 "------------------------------------------------------------------------------
 "------------------------------------------------------------------------------
-
+let g:tagbar_type_vhdl = {
+    \ 'ctagstype': 'vhdl',
+    \ 'kinds' : [
+        \'d:prototypes',
+        \'b:package bodies',
+        \'e:entities',
+        \'a:architectures',
+        \'t:types',
+        \'p:processes',
+        \'f:functions',
+        \'r:procedures',
+        \'c:constants',
+        \'T:subtypes',
+        \'r:records',
+        \'C:components',
+        \'P:packages',
+        \'l:locals'
+    \]
+\}
 
 "------------------------------------------------------------------------------
 " Trailing Whitespaces
