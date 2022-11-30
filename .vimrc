@@ -1,6 +1,23 @@
+
+if has("gui_running")
+    if has('win32') || has('win64')
+        set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+    endif
+    if has("gui_gtk2")
+        set guifont=Inconsolata\ 12
+    elseif has("gui_macvim")
+        set guifont=Menlo\ Regular:h12
+    elseif has("gui_win32")
+        set guifont=Consolas:h10:cANSI
+    endif
+    set mouse=a
+    map <ScrollWheelUp> k
+    map <ScrollWheelDown> j
+endif
 "------------------------------------------------------------------------------
 " Features
 "------------------------------------------------------------------------------
+
 set nocompatible            " Disable vi compatibility
 
 filetype on                 " filetype must be 'on' before setting it 'off'
@@ -71,8 +88,9 @@ set ttyfast " fast scrolling
 " Plugin Settings
 "------------------------------------------------------------------------------
 nmap <F1> :NERDTreeToggle<CR> " Nerdtree toggle
-nnoremap <C-t> :SyntasticToggleMode<CR>
+nnoremap <C-s> :SyntasticToggleMode<CR> " toggle syntastic
 
+nnoremap <C-t> :CtrlPTag<CR> " Ctrl-P for ctags (Ctrl-T!)
 let g:ctrlp_map = '<c-p>' " CtrlP toggle
 let g:ctrlp_cmd = 'CtrlP'
 
@@ -84,7 +102,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_ruby_exec = '~/usr/bin/ruby'
+" let g:syntastic_ruby_exec = '~/usr/bin/ruby'
 let g:syntastic_mode_map = {'mode': 'active',
                             \ 'passive_filetypes': ['assembly'] }
 "------------------------------------------------------------------------------
@@ -114,9 +132,3 @@ autocmd InsertEnter * match ForbiddenWhitespace /\t\|\s\+\%#\@<!$/
 "------------------------------------------------------------------------------
 " Notes~
 "------------------------------------------------------------------------------
-
-" Because I'm lazy, ill be putting a note here of some of the plugin shortcuts
-" - ctrlP = Control+P (duh), control V or s will do a vertical split
-" - nerdtree = F1, s for vert split, ctrl ww for switching pane
-" - ctrl-t disables syntastic
-"
