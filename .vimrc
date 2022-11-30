@@ -89,10 +89,11 @@ set ttyfast " fast scrolling
 "------------------------------------------------------------------------------
 nmap <F1> :NERDTreeToggle<CR> " Nerdtree toggle
 nnoremap <C-s> :SyntasticToggleMode<CR> " toggle syntastic
+nmap <F3> :TagbarToggle<CR> " Tagbar toggle
 
-nnoremap <C-t> :CtrlPTag<CR> " Ctrl-P for ctags (Ctrl-T!)
 let g:ctrlp_map = '<c-p>' " CtrlP toggle
 let g:ctrlp_cmd = 'CtrlP'
+nnoremap <C-t> :CtrlPTag<CR> " Ctrl-P for ctags (Ctrl-T!)
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
