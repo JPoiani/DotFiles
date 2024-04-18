@@ -106,8 +106,10 @@ let g:syntastic_check_on_wq = 0
 " let g:syntastic_ruby_exec = '~/usr/bin/ruby'
 let g:syntastic_mode_map = {'mode': 'active',
                             \ 'passive_filetypes': ['assembly'] }
-"------------------------------------------------------------------------------
-"------------------------------------------------------------------------------
+
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
 let g:tagbar_type_vhdl = {
     \ 'ctagstype': 'vhdl',
     \ 'kinds' : [
