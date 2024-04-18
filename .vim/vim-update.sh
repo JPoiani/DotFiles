@@ -11,6 +11,7 @@ declare -a gitRepo=( \
   'https://github.com/tpope/vim-sensible' \
   'https://github.com/flazz/vim-colorschemes' \
   'https://github.com/preservim/tagbar' \
+  'https://github.com/junegunn/vim-easy-align' \
 );
 
 if [ ! -d autoload ]; then
